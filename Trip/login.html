@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>GoTik.trip</span>
+        </div>
+        <nav class="nav-container">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="trips.html">TICKET</a></li>
+                <li><a href="login.html" class="active">PROFILE</a></li>
+            </ul>
+            <button class="contact-btn">Contact us</button>
+        </nav>
+    </header>
+
+    <section class="login-container">
+        <h2>SELAMAT DATANG</h2>
+        <p>Silakan masuk atau daftar untuk menikmati layanan kami.</p>
+
+        <div class="form-wrapper">
+            <div class="tab">
+                <button id="loginTab" class="active" onclick="showForm('login')">Masuk</button>
+                <button id="registerTab" onclick="showForm('register')">Daftar</button>
+            </div>
+
+            <!-- Form Login -->
+            <div id="loginForm" class="form-box">
+                <form onsubmit="redirectToHome(event)">
+                    <label>Nama Pengguna</label>
+                    <input type="text" placeholder="Nama Pengguna" required>
+                    <label>Email</label>
+                    <input type="email" placeholder="Email" required>
+                    <label>Kata Sandi</label>
+                    <input type="password" placeholder="Kata Sandi" required>
+                    <button type="submit" class="btn">Masuk</button>
+                </form>
+            </div>
+
+            <!-- Form Daftar -->
+            <div id="registerForm" class="form-box hidden">
+                <form onsubmit="redirectToHome(event)">
+                    <label>Nama Pengguna</label>
+                    <input type="text" placeholder="Nama Pengguna" required>
+                    <label>Email</label>
+                    <input type="email" placeholder="Email" required>
+                    <label>Jenis Kelamin</label>
+                    <input type="text" placeholder="Jenis Kelamin" required>
+                    <label>Kata Sandi</label>
+                    <input type="password" placeholder="Kata Sandi" required>
+                    <button type="submit" class="btn">Daftar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showForm(type) {
+            const loginForm = document.getElementById("loginForm");
+            const registerForm = document.getElementById("registerForm");
+            const loginTab = document.getElementById("loginTab");
+            const registerTab = document.getElementById("registerTab");
+
+            if (type === "login") {
+                loginForm.classList.remove("hidden");
+                registerForm.classList.add("hidden");
+                loginTab.classList.add("active");
+                registerTab.classList.remove("active");
+            } else {
+                loginForm.classList.add("hidden");
+                registerForm.classList.remove("hidden");
+                loginTab.classList.remove("active");
+                registerTab.classList.add("active");
+            }
+        }
+
+        function redirectToHome(event) {
+            event.preventDefault(); // Mencegah form submit default
+            window.location.href = "index.html"; // Arahkan ke halaman index
+        }
+    </script>
+</body>
+</html>

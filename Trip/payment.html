@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran | GoTik.trip</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 🔹 HEADER -->
+    <header>
+        <div class="logo">
+            <span>GoTik.trip</span>
+        </div>
+        <nav class="nav-container">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="trips.html">TICKET</a></li>
+            </ul>
+            <button class="contact-btn">Contact us</button>
+        </nav>
+    </header> 
+
+    <!-- 🔹 CONTAINER PEMBAYARAN -->
+    <section class="payment-container">
+        <div class="payment-card">
+            <h2>Pilih Metode Pembayaran</h2>
+
+            <div id="order-summary">
+                <h3>Detail Pesanan</h3>
+                <p><strong>Trip:</strong> <span id="trip-name"></span></p>
+                <p><strong>Tipe Tiket:</strong> <span id="ticket-type"></span></p>
+                <p><strong>Jumlah Tiket:</strong> <span id="ticket-quantity"></span></p>
+                <p><strong>Total Bayar:</strong> <span id="total-price"></span></p>
+            </div>
+
+            <label for="payment-method"><strong>Metode Pembayaran:</strong></label>
+            <select id="payment-method">
+                <option value="bank-transfer">Transfer Bank</option>
+                <option value="e-wallet">E-Wallet</option>
+                <option value="credit-card">Kartu Kredit</option>
+            </select>
+
+            <button id="confirmPayment" class="btn-pesan">Konfirmasi Pembayaran</button>
+        </div>
+    </section>
+
+    <!-- 🔹 MODAL POP-UP -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Pembayaran Berhasil!</h3>
+            <p>Terima kasih telah memesan trip. Selamat menikmati perjalanan Anda!</p>
+            <button class="btn-pesan" onclick="window.location.href='index.html'">Kembali ke Beranda</button>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>

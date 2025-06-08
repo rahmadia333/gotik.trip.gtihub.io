@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Trip | GoTik.trip</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 🔹 HEADER -->
+    <header>
+        <div class="logo">
+            <span>GoTik.trip</span>
+        </div>
+        <nav class="nav-container">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="trips.html">TICKET</a></li>
+            </ul>
+            <button class="contact-btn">Contact us</button>
+        </nav>
+    </header>
+
+    <!-- 🔹 CONTAINER UTAMA -->
+    <section class="trip-detail-container">
+        <div class="trip-content">
+            <button class="btn-back" onclick="history.back()">⬅ Kembali</button>
+            <div id="trip-detail" class="trip-detail"></div>
+        </div>
+    </section>
+
+    <script src="trips.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tripId = urlParams.get("id");
+
+            if (typeof trips !== "undefined") {
+                const trip = trips.find(t => t.id == tripId);
+
+                if (trip) {
+                    document.getElementById("trip-detail").innerHTML = `
+                        <h2>${trip.nama}</h2>
+                        <img src="${trip.img}" alt="${trip.nama}" class="trip-img">
+                        <div class="trip-info">
+                            <p><strong>Lokasi:</strong> ${trip.lokasi}</p>
+                            <p><strong>Tanggal Keberangkatan:</strong> ${trip.tanggal}</p>
+                            <p><strong>Harga Reguler:</strong> ${trip.hargaReguler.toLocaleString("id-ID", { style: "currency", currency: "IDR" })}</p>
+                            <p><strong>Harga VIP:</strong> ${trip.hargaVIP.toLocaleString("id-ID", { style: "currency", currency: "IDR" })}</p>
+                            <p><strong>Deskripsi:</strong> ${trip.deskripsi}</p>
+                        </div>
+                        <a href="trip-order.html?id=${trip.id}" class="btn-pesan">Pesan Sekarang</a>
+                    `;
+                } else {
+                    document.getElementById("trip-detail").innerHTML = "<p>Trip tidak ditemukan.</p>";
+                }
+            } else {
+                console.error("Data trip tidak ditemukan. Pastikan trips.js sudah dimuat.");
+            }
+        });
+    </script>
+
+</body>
+</html>

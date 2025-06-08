@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Tiket | GoTik.trip</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 🔹 HEADER -->
+    <header>
+        <div class="logo">
+            <span>GoTik.trip</span>
+        </div>
+        <nav class="nav-container">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="trips.html">TICKET</a></li>
+            </ul>
+            <button class="contact-btn">Contact us</button>
+        </nav>
+    </header> 
+
+    <!-- 🔹 CONTAINER PEMESANAN -->
+    <section class="order-container">
+        <div class="order-card">
+            <button class="btn-back" onclick="history.back()">⬅ Kembali</button>
+            <h2>Detail Pesanan</h2>
+            <div id="order-summary">
+                <p><strong>Trip:</strong> <span id="trip-name">-</span></p>
+                <p><strong>Lokasi:</strong> <span id="trip-location">-</span></p>
+                <p><strong>Tanggal:</strong> <span id="trip-date">-</span></p>
+                <p><strong>Tipe Tiket:</strong> 
+                    <select id="ticket-type"></select>
+                </p>
+                <p>
+                    <label for="quantity"><strong>Jumlah Tiket:</strong></label>
+                    <input type="number" id="quantity" value="1" min="1">
+                </p>
+                <p><strong>Total Bayar:</strong> <span id="total-price">Rp 0</span></p>
+            </div>
+            <button id="goToPayment" class="btn-pesan">Lanjut ke Pembayaran</button>
+        </div>
+    </section>
+
+    <script src="trips.js"></script>
+    <script src="order.js"></script>
+</body>
+</html>

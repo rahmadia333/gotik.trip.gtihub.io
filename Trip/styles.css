@@ -1,0 +1,622 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center; /* Pastikan semua elemen sejajar */
+    gap: 30px;
+}
+
+.nav-container ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-container ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-container ul li a.active {
+    font-weight: 700;
+}
+
+.contact-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center; /* Pastikan tombol sejajar */
+    height: 100%; /* Sesuaikan tinggi dengan menu */
+}
+
+.hero img {
+    width: 100%;
+    height: 28rem;
+    object-fit: cover;
+}
+
+#best-trip {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Kolom kiri lebih kecil, kanan lebih besar */
+    gap: 30px; /* Jarak antar elemen */
+    padding: 50px;
+}
+
+
+#best-trip h2 {
+    max-width: 180px; /* Atur sesuai kebutuhan */
+    text-align: left;
+}
+
+#trip-list {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start; /* Pastikan daftar trip dimulai dari kiri */
+    flex: 1; /* Memastikan daftar trip mengisi ruang yang tersedia */
+}
+
+.trip-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 250px;
+    flex: 1 1 250px;
+    max-width: 280px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Link yang membungkus gambar dan teks */
+.trip-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.trip-card img {
+    width: 100%;
+    max-width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.trip-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.trip-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.trip-btn:hover {
+    background-color: #388E3C;
+}
+
+/* Styling khusus untuk trips.html */
+.trips-page .trips-section {
+    padding: 50px;
+    background-color: #5c715e; /* Warna background sesuai gambar */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan elemen ke tengah */
+    justify-content: center; /* Pastikan konten berada di tengah */
+    width: 100%;
+    padding: 50px 0;
+}
+
+.trips-page .trips-container {
+    max-width: 1200px; /* Batasan lebar agar tidak terlalu lebar */
+    width: 100%;
+    text-align: center;
+    padding: 0 20px; /* Tambahkan padding kiri-kanan agar lebih rapi */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pastikan kontennya benar-benar tengah */
+}
+
+.trips-page .trips-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #fdfdfd;
+}
+
+.trips-page .trips-container p {
+    font-size: 16px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+/* Grid layout untuk card trip */
+.trips-page #trip-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Card styling */
+.trips-page .trip-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pastikan tombol tetap di bawah */
+    align-items: center;
+    min-height: 400px; /* Atur tinggi minimal agar semua card seragam */
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+    padding-bottom: 15px;
+}
+
+.trips-page .trip-content {
+    flex-grow: 1; /* Biar konten mengisi ruang kosong */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan teks */
+}
+
+.trips-page .trip-card:hover {
+    transform: scale(1.05);
+    border: 3px solid #c4a259; /* Warna highlight saat hover */
+}
+
+/* Gambar dalam card */
+.trips-page .trip-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Nama trip */
+.trips-page .trip-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.trips-page .trip-card p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+/* Tombol trip */
+.trips-page .trip-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5c715e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+    margin-top: auto;
+}
+
+.trips-page .trip-card .trip-btn:hover {
+    background-color: #c4a259;
+}
+
+
+
+
+/* 🔹 Container utama trip detail */
+.trip-detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+/* 🔹 Wrapper konten trip */
+.trip-content {
+    max-width: 800px;
+    width: 100%;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 🔹 Tombol kembali */
+.btn-back {
+    display: inline-block;
+    margin-bottom: 15px;
+    background: #ddd;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-back:hover {
+    background: #ccc;
+}
+
+/* 🔹 Gambar Trip */
+.trip-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* 🔹 Info Trip */
+.trip-info {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.trip-info p {
+    font-size: 16px;
+    color: #555;
+    margin: 8px 0;
+}
+
+/* 🔹 Tombol Pesan */
+.btn-pesan {
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn-pesan:hover {
+    background: #388E3C;
+}
+
+/* 🔹 Container utama pemesanan */
+.order-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+/* 🔹 Kartu pemesanan */
+.order-card {
+    max-width: 500px;
+    width: 100%;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 🔹 Tombol kembali */
+.btn-back {
+    display: inline-block;
+    margin-bottom: 15px;
+    background: #ddd;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-back:hover {
+    background: #ccc;
+}
+
+/* 🔹 Form pemesanan */
+.order-card p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+    text-align: left;
+}
+
+.order-card select,
+.order-card input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 🔹 Tombol Lanjut ke Pembayaran */
+.btn-pesan {
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-pesan:hover {
+    background: #388E3C;
+}
+
+/* 🔹 Container utama pembayaran */
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+/* 🔹 Kartu pembayaran */
+.payment-card {
+    max-width: 450px;
+    width: 100%;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 🔹 Detail pesanan */
+#order-summary {
+    text-align: left;
+    margin-bottom: 15px;
+    margin-top: 35px;
+}
+
+#order-summary p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #555;
+}
+
+/* 🔹 Dropdown metode pembayaran */
+#payment-method {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* 🔹 Tombol Konfirmasi */
+.btn-pesan {
+    display: block;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: background 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-pesan:hover {
+    background: #388E3C;
+}
+
+/* 🔹 Modal Pop-up */
+.modal {
+    display: none; /* Sembunyikan modal awalnya */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Pastikan modal ada di tengah */
+}
+
+/* 🔹 Konten Modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out; /* Efek muncul */
+}
+
+/* 🔹 Efek Animasi Modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 🔹 Tombol Close */
+.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Container utama login */
+.login-container {
+    background-color: #5d6f57;
+    padding: 50px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* Judul */
+.login-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Deskripsi */
+.login-container p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Wrapper form */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Kotak form */
+.form-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Tab */
+.tab {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tab button {
+    background: #5d6f57;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tab button.active {
+    background: #3c4e3b;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block;
+}
+
+/* Tombol login & daftar */
+.btn {
+    background: #5d6f57;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #4b5a45;
+}
+
+/* Hide register form */
+.hidden {
+    display: none;
+}
